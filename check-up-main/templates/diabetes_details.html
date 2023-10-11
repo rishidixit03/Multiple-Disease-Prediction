@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Diabetes</title>
+
+
+
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+
+    background-color: #f1f1f1;
+
+    font-family: Arial;
+  }
+
+  /* Center website */
+  .main {
+    margin: 80px;
+    margin-top: 50px;
+  }
+
+
+
+  .navbar-brand {
+    font-size: 40px;
+    padding-left: 100px;
+  }
+
+
+
+  p {
+
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
+
+  }
+
+  h3 {
+
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
+
+  }
+
+  .content {
+    background-color: white;
+    padding: 10px;
+    align-items: center;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 80px;
+  }
+
+  .b {
+    padding-bottom: 3%;
+    display: flex;
+align-items: center;
+justify-content: center;
+
+  }
+</style>
+
+<!-- Adding styles like colour, height, width, border to our html page -->
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <div class="container-fluid">
+
+      <a class="navbar-brand">CHECK-UP</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse inline " id="navbarSupportedContent" style="margin-right: 100px;">
+
+
+
+
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{{url_for('home_page') }}">Home</a>
+          </li>
+
+         
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('cancer_details') }}">Breast Cancer</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('heart_details') }}">Heart Disease</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Diabetes</a>
+          </li>
+
+
+
+        </ul>
+        </ul>
+        </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <h2 style="margin:50px; margin-left: 110px;">
+    DIABETES </h2>
+
+  <div class="content">
+    <h3>About</h3>
+    <p>
+      Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. <br>
+      Blood glucose is your main source of energy and comes from the food you eat.<br>
+      Insulin, a hormone made by the pancreas, helps glucose from food get into your cells to be used for energy. <br>
+      Sometimes your body doesn’t make enough—or any—insulin or doesn’t use insulin well. Glucose then stays in your
+      blood and doesn’t reach your cells.<br></p>
+    <br>
+    <h3>Symptoms</h3>
+    <ul>
+      <li>
+        Urinating often
+      </li>
+      <li>Feeling very thirsty.</li>
+      <li>Extreme fatigue.</li>
+      <li>Blurry vision.</li>
+    </ul>
+
+    <br>
+    <h3>Prerequisite</h3>
+
+    <p>A person must have his/her report handy to fill the values needed in predicting the disease.<br> <b>Following
+        Reports/tests are needed</b> :<br>
+      <b>OGTT test</b> - Oral Glucose Tolerance Test will provide the value of Glucose <br>
+      <b>Blood test </b> - will provide the value for Insulin<br>
+      <b>Skin fold test</b> - will provide the value for Skin thickness<br>
+      <b>Blood pressure test</b> - will provide the value of Blood pressure<br><br>
+
+    </p>
+
+
+    <h3>Factors affecting Diabetes</h3>
+    <p>
+      <b>* Pregnancies</b>: Number of times pregnant. <br>
+      Reports say that more number of pregnancies after the age of 35 years increase the chances of diabetes. <br><br>
+      <b>* Glucose</b>: Plasma glucose concentration a 2 hours in an oral glucose tolerance test <br>
+
+      For an OGTT : <br>
+      less than 140 mg/dL normal. <br>
+      140 to 199 mg/dL = at risk(indicates prediabetes). <br>
+      200 mg/dL or above = high(indicates diabetes). <br> <br>
+
+      <b>* BloodPressure</b> : Diastolic blood pressure (mm Hg) is considered here.
+      Ideal blood pressure is considered to be between 90/60mmHg and 120/80mmHg. <br>
+      General Blood pressure(diastolic) range :
+      <br>
+      Below 60 = Low<br>
+      60-90 = Normal<br>
+      Above 90 = High<br><br>
+      <b>* SkinThickness</b>: Triceps skin fold thickness (mm) <br> <br>
+      <b>* Insulin</b>: 2-Hour serum insulin (mu U/ml) . <br> <br>
+      <b>* BMI</b>: Body mass index (weight in kg/(height in m)^2)
+      Body mass index is a value derived from the mass and height of a person. <br><br>
+      General range for BMI is : <br> <br>
+      18.5 - 24.9 = normal/Healthy
+      <br> 25.0 - 29.9 = overweight <br>
+      Above 30.0 = obese. <br> <br>
+      <b>* DiabetesPedigreeFunction</b>: Diabetes pedigree function (a function which scores likelihood of diabetes
+      based on family history) <br>Higher Pedigree Function means patient is more likely to have diabetes.
+      <br> <br>
+      <b>* Age</b>: Age of a person in years. <br> <br>
+
+
+
+
+    </p>
+    <div class="b">
+      <button type="button" class="btn btn-info btn-lg"><a style="text-decoration: none;color:black;"
+          href="{{url_for('predict_diabetes') }}">Take test</a><span>&rarr;</span></button>
+      <!-- <div class = "b">  <button class="card-btn"><a href = "{{url_for('predict_diabetes') }}">Take test</a><span>&rarr;</span></button> -->
+    </div>
+
+  </div>
+</body>
+
+</html>

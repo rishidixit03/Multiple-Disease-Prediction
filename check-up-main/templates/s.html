@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Responsive Navigation Menu</title>
+      <!-- <link rel="stylesheet" href="static/style4.css"> -->
+      <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <style>
+       *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+.main {
+ 
+  margin: auto;
+
+}
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #1b1b1b;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+ 
+}
+nav .logo{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fff;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
+}
+
+
+
+/* Center website */
+
+.column:hover {
+    transform: translateY(-0.5%);
+    box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
+  }
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content1 {
+  background-color: white;
+  padding: 10px;
+  align-items: center;
+}
+.card-btn {
+    
+    display: block;
+    width: 50%;
+    padding: 0.8rem; 
+    font-size: 1rem;
+    text-align: center;
+    color: #3363ff;
+    background-color: #d8e0fd;
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+  }
+  
+  .card-btn span {
+    margin-left: 1rem;
+    transition: 0.2s;
+  }
+  
+  .card-btn:hover,
+  .card-btn:active {
+    background-color: #c2cffc;
+  }
+  
+  .card-btn:hover span,
+  .card-btn:active span {
+    margin-left: 1.5rem;
+  }
+  .first-txt {
+            position: absolute;
+            top: 17px;
+            left: 50px;
+        }
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 1500px) {
+  .column {
+    width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+   </style>
+   <body>
+      <nav>
+         <div class="logo">
+            CHECK-UP
+         </div>
+         <input type="checkbox" id="click">
+         <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         </label>
+         <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Feedback</a></li>
+         </ul>
+      </nav>
+      <div class="main">
+
+        
+        
+        <div class="content1">
+            <img src="../static/img/d1.jpg" alt="Bear" style="width:100%">
+            <h2 class="first-txt">
+                GeeksforGeeks
+            </h2>
+            
+            <h3>This portal provides prediction help for 4 diseases:</h3>
+                <p>Breast cancer</p>
+            <p> Diabetes</p>
+            <p> Heart disease</p>
+            <!-- <p> Kidney disease</p> -->
+             <br>
+        
+            <p><h3>Follow the steps to get the predictions: </h3>
+                <p> Go to the prediction page of the disease you wish to get results</p>
+                    <p> Take out your report, and fill the values from the report into the form present on your screen</p>
+                        <p>Click on the prediction button, and the result will be on your screen.</p> </p>
+        
+          </div>
+        
+        <!-- Portfolio Gallery Grid -->
+        <div class="row">
+          <div class="column">
+            <div class="content">
+              <img src="../static/img/d2.jpg" alt="diabetes" style="width:100%" height="350px">
+              <h3>Diabetes</h3>
+            <button class="card-btn"><a href = "{{url_for('diabetes_details') }}">Read details</a><span>&rarr;</span></button>
+              <br>
+              <button class="card-btn"><a href = "{{url_for('predict_diabetes') }}">Take test </a> <span>&rarr;</span></button>
+              
+            </div>
+          </div>
+          <div class="column">
+            <div class="content">
+            <img src="../static/img/d3.jpg" alt="heart" style="width:100%" >
+              <h3>Heart Disease</h3>
+              <button class="card-btn"><a href = "{{url_for('heart_details') }}">Read details</a><span>&rarr;</span></button>
+              <br>
+              <button class="card-btn"><a href = "{{url_for('predict_heart')}}">Take test</a> <span>&rarr;</span></button>
+              
+            </div>
+          </div>
+          <div class="column">
+            <div class="content">
+            <img src="../static/img/d6.jpg" alt="Cancer"  style="width:100%" height="400">
+              <h3>Breast Cancer</h3>
+              <button class="card-btn"><a href = "{{url_for('cancer_details') }}">Read details</a><span>&rarr;</span></button>
+              <br>
+              <button class="card-btn"><a href = "{{url_for('predict_cancer') }}">Take test</a><span>&rarr;</span></button>
+        
+              
+            </div>
+          </div>
+          <!-- <div class="column">
+            <div class="content">
+            <img src="https://th.bing.com/th/id/OIP.oLyDsEQWIl7BIVqm-X71hQHaHG?pid=ImgDet&rs=1" alt="Kidney" style="width:100%"height="400">
+              <h3>Kidney Disease</h3>
+              <button class="card-btn"><a href = "{{url_for('kidney_details') }}">Read details</a><span>&rarr;</span></button>
+              <br>
+              <button class="card-btn"><a href = "{{url_for('predict_kidney') }}">Take test </a> <span>&rarr;</span></button>
+              
+            </div>
+          </div> -->
+        <!-- END GRID -->
+        </div>
+        
+        
+        
+        <!-- END MAIN -->
+        </div>
+         
+         
+      </div>
+   </body>
+</html>

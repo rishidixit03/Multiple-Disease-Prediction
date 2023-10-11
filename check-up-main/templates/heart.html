@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Heart</title>
+        <link rel="stylesheet" href="static/style.css"/>
+        
+    </head>
+    
+<!-- Adding styles like colour, height, width, border to our html page -->
+
+
+<body>
+  
+  <div class="container">
+    <div class="title">Heart Disease Prediction</div>
+    <div class="content">
+      <form action="{{ url_for('predict_heart')}}" method="post">
+        <div class="user-details">
+         <div class="input-box">
+            <span class="details">Age</span>
+            <input type="text" id="age" name="age" placeholder="age in years" required="required"></div>
+
+ <div class="input-box">
+  <span class="details">Sex</span>
+<input type="text" id="sex" name="sex" placeholder="1 = male; 0 = female " required="required">
+</div>
+<div class="input-box">
+  <span class="details">Chest pain </span>
+<input type="text" id="cp" name="cp" placeholder="chest-pain type(0-3)" required="required">
+</div>
+
+<div class="input-box">
+  <span class="details">Resting BP</span>
+<input type="text" id="trestbps" name="trestbps" placeholder="on critical-stage(mm/hg)" required="required"></div>
+
+<div class="input-box">
+  <span class="details">Serum Cholestoral</span>
+<input type="text" id="chol" name="chol" placeholder="in mg/dl(126-564) " required="required"></div>
+
+<div class="input-box">
+  <span class="details">Fasting Blood Sugar</span>
+<input type="text" id="fbs" name="fbs" placeholder=">120(1=yes; 0=no) " required="required"></div>
+
+<div class="input-box">
+  <span class="details">Electrocardiographic </span>
+<input type="text" id="restecg" name="restecg" placeholder="resting Electrocardiographic (0-2)" required="required"></div>
+
+<div class="input-box">
+  <span class="details">Max heart rate </span>
+<input type="text" id="thalach" name="thalach" placeholder="maximum heart rate (71-202)" required="required"></div>
+
+<div class="input-box">
+  <span class="details">Exercise induced angina </span>
+<input type="text" id="exang" name="exang" placeholder="1 = yes; 0 = no" required="required"></div>
+
+<div class="input-box">
+  <span class="details">ST depression</span>
+<input type="text" id="oldpeak" name="oldpeak" placeholder="induced by exercise(0-6.2)" required="required"></div>
+
+<div class="input-box">
+  <span class="details">Slope</span>
+<input type="text" id="slope" name="slope" placeholder="Slope-ST segment(0-2)" required="required"></div>
+
+<div class="input-box">
+  <span class="details">Major vessels colored </span>
+<input type="text" id="ca" name="ca" placeholder="by flourosopy (0-3) " required="required"></div>
+
+
+
+<div class="input-box">
+  <span class="details">Defect</span>
+<input type="text" id="thal" name="thal" placeholder="defect(0-3)" required="required"></div>
+
+</div>
+<div class="button">
+  <input type="submit" value="Predict">
+</div>
+</form>
+</div>
+</div>
+<h3>{{ prediction_text }}</h3>
+
+
+
+     
+
+     
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+     

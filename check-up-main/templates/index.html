@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f1f1f1;
+      /* padding: 20px; */
+      font-family: Arial;
+    }
+
+    /* Center website */
+    .main {
+      margin: 80px;
+      margin-top: 50px;
+    }
+
+    img {
+      max-width: 200px;
+      max-height: 200px;
+    }
+
+
+
+
+    h1 {
+      font-size: 50px;
+      word-break: break-all;
+    }
+
+    .row {
+      margin: 8px -16px;
+    }
+
+
+
+    /* Add padding BETWEEN each column */
+    .row,
+    .row>.column {
+      padding: 8px;
+    }
+
+    /* Create four equal columns that floats next to each other */
+    /* .column {
+      float: left;
+      width: 25%;
+    } */
+
+    /* Clear floats after rows */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .navbar-brand {
+      font-size: 40px;
+      padding-left: 100px;
+    }
+
+    /* Content */
+    .card-content {
+      background-color: white;
+      padding: 10px;
+      align-items: center;
+      margin-top: 20px;
+      border-radius: 1rem;
+    }
+
+    .card-content:hover {
+      transform: translateY(-0.1.5%);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+
+    .card-btn {
+
+      display: block;
+      width: 50%;
+      padding: 0.8rem;
+
+      text-align: center;
+
+      border: none;
+      border-radius: 0.4rem;
+      transition: 0.2s;
+      cursor: pointer;
+      letter-spacing: 0.1rem;
+    }
+
+    .card-btn span {
+      margin-left: 1rem;
+      transition: 0.2s;
+    }
+
+    .card-btn:hover,
+    .card-btn:active {
+      background-color: #c2cffc;
+    }
+
+    .card-btn:hover span,
+    .card-btn:active span {
+      margin-left: 1.5rem;
+    }
+
+    /* Responsive layout - makes a two column-layout instead of four columns
+    @media screen and (max-width: 1500px) {
+      .column {
+        width: 50%;
+      }
+    } */
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <!-- <div class="container-fluid"> -->
+
+      <a class="navbar-brand">CHECK-UP</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin-right: 100px;">
+
+        <ul class="navbar-nav  ms-auto ">
+          <li class="nav-item active">
+            <a class="nav-link "  href="#">Home</a>
+          </li>
+
+          
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('cancer_details') }}">Breast Cancer</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('heart_details') }}">Heart Disease</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('diabetes_details') }}">Diabetes</a>
+          </li>
+
+
+
+        </ul>
+        
+
+      </div> 
+    <!-- </div> -->
+  </nav>
+  <!-- MAIN (Center website) -->
+  <div class="main">
+    <!-- <br><br>
+<h1>CHECK-UP</h1>
+<hr> -->
+
+
+
+    <div class="container home-content"
+      style="background: url('../static/img/home_background.jpg') no-repeat center center fixed; background-attachment: scroll;">
+      <div class="row">
+        <h3 style="margin-top: 50px;">ONE PLACE FOR MULTIPLE DISEASE PREDICTION</h3><br>
+        <p>So, you have a report? We have your disease prediction!</p>
+      </div>
+      <div class="row">
+
+
+        <div class="col-sm-6">
+
+          <h5 class="card-title">
+            <h3>This portal provides prediction help for 3 diseases:</h3><br>
+            <ul>
+              <li>Breast cancer</li>
+              <li>Heart disease</li>
+              <li>Diabetes</li>
+              
+            </ul>
+
+          </h5>
+          <p class="card-text">
+            <br>
+
+          <p>
+          <h3>Follow the steps to get the predictions: </h3><br>
+          <ul>
+            <li>Go to the respective disease page and read the details.
+            </li>
+            <li>
+              Now click on 'Take test' button, this will render you to prediction page.
+            </li>
+            <li>
+              Take out your report, and fill the values from the report into the form present on your screen.
+            </li>
+            <li>
+              Click on the prediction button, and the result will be on your screen.
+            </li>
+          </ul>
+
+          </p>
+          </p>
+
+
+        </div>
+
+        <!-- <div class="col-sm-6">
+  
+        <img src="../static/img/d1.jpg" alt="Bear" style="width:100%">
+   
+  </div> -->
+
+      </div>
+    </div>
+
+
+
+    <!-- Portfolio Gallery Grid -->
+
+    <div class="container card-content"
+      style="background: url('../static/img/cancer.jpg') no-repeat center center fixed; background-attachment: scroll;">
+
+
+      <div class="row">
+
+
+        <div class="col-sm-6" style="margin: 3%;">
+          <h2>Breast Cancer</h2>
+          <button class="btn card-btn btn-lg btn-dark" style="background-color: rgb(46, 54, 90);"><a
+              href="{{url_for('cancer_details') }}" style="color: white;text-decoration:none;">Read
+              details</a><span>&rarr;</span></button>
+          <br>
+          <button class="btn card-btn btn-lg btn-dark" style="background-color: rgb(46, 54, 90);"><a
+              href="{{url_for('predict_cancer') }}" style="color: white;text-decoration:none;">Take test </a>
+            <span>&rarr;</span></button>
+        </div>
+
+
+        <!-- <div class="col-sm-6">
+              <img src="../static/img/d2.jpg" alt="diabetes"  height="350px">
+            </div>
+       -->
+      </div>
+    </div>
+
+
+
+    <div class="container card-content"
+      style="background: url('../static/img/heart.png') no-repeat center center fixed; background-attachment: scroll;background-color: #ffffb0;">
+
+
+      <div class="row">
+
+
+        <div class="col-sm-6" style="margin: 3%;">
+          <h2>Heart Disease</h2>
+          <button class="btn card-btn btn-lg btn-dark" style="background-color: rgb(46, 54, 90);"><a
+              href="{{url_for('heart_details') }}" style="color: white;text-decoration:none;">Read
+              details</a><span>&rarr;</span></button>
+          <br>
+          <button class="btn card-btn btn-lg btn-dark" style="background-color: rgb(46, 54, 90);"><a
+              href="{{url_for('predict_heart')}}" style="color: white;text-decoration:none;">Take test </a>
+            <span>&rarr;</span></button>
+        </div>
+
+
+        <!-- <div class="col-sm-6">
+              <img src="../static/img/d2.jpg" alt="diabetes"  height="350px">
+            </div>
+       -->
+      </div>
+    </div>
+
+
+
+
+    <div class="container card-content"
+      style="background: url('../static/img/diabetes.jpg') no-repeat center center fixed; background-attachment: scroll;background-color: #a2c6e6;">
+
+
+      <div class="row">
+
+
+        <div class="col-sm-6" style="margin: 3%;">
+          <h2>Diabetes</h2>
+          <button class="btn card-btn btn-lg btn-dark" style="background-color: rgb(46, 54, 90);"><a
+              href="{{url_for('diabetes_details') }}" style="color: white;text-decoration:none;">Read
+              details</a><span>&rarr;</span></button>
+          <br>
+          <button class="btn card-btn btn-lg btn-dark" style="background-color: rgb(46, 54, 90);"><a
+              href="{{url_for('predict_diabetes') }}" style="color: white;text-decoration:none;">Take test </a>
+            <span>&rarr;</span></button>
+        </div>
+
+
+        <!-- <div class="col-sm-6">
+              <img src="../static/img/d2.jpg" alt="diabetes"  height="350px">
+            </div>
+       -->
+      </div>
+    </div>
+
+    
+  
+    <!-- END MAIN -->
+  </div>
+
+</body>
+
+</html>

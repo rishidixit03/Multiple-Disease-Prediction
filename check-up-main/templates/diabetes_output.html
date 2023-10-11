@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>prediction</title>
+        
+        
+        
+      </head>
+
+    <style>
+        * {
+  box-sizing: border-box;
+}
+
+body {
+ background: linear-gradient(135deg, #71b7e6, #9b59b6); 
+  padding: 20px;
+  font-family: Arial;
+}
+
+/* Center website */
+.main {
+  max-width: 2000px;
+  margin: auto;
+}
+/* content {
+      
+      padding: 100px;
+      align-items: center;
+    } */
+
+  .container{
+
+    background-color: white; 
+    text-align: center;
+    align-items: center;
+   
+    margin: auto;
+    padding-bottom: 10px;
+    padding-top: 30px;
+    padding-left : 30px;
+    padding-right : 30px;
+    /* transform : translateX(-10%) translateY(-30%); */
+  }
+  .pre{
+    text-align: left;
+
+  }
+/* h3{
+    /* padding-top: 20px;
+    padding-bottom: 20px; */
+    /* background-color: white; 
+    text-align: center;
+    position : absolute;
+    top : 50%;
+    left : 50%;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-left : 30px;
+    padding-right : 30px;
+    transform : translateX(-50%) translateY(-50%);
+    
+} */ */
+
+    </style>
+    
+<!-- Adding styles like colour, height, width, border to our html page -->
+<body>
+  <div class = "container">
+    
+  <h3>{{ prediction_text }}
+    <!-- {{Age}}{{BMI}} -->
+
+    <h3>{{advice}}</h3>
+
+    <div class ="pre">
+    <h3>{{Pre}}</h3>
+
+    
+    <h5>{{p1}}</h5>
+    <h5>{{p2}}</h5>
+    <h5>{{p3}}</h5>
+    <h5>{{p4}}</h5>
+    <h5>{{p5}}</h5>
+    </div>
+
+  </h3>
+  <p id = "m1"></p>
+ 
+  <p id = "m2"></p>
+  <p id = "m3"></p>
+  <br>
+  <a href = "{{url_for('diabetes_details') }}">Check description box for more details</a>
+  <br><br>
+  <a href = "{{url_for('predict_diabetes') }}"><button class="btn" type="submit">Take another test</button></a>&nbsp &nbsp
+  <a href = "{{url_for('home_page') }}"><button class="btn" type="submit">Home</button></a><br><br>
+  
+  </div>
+  
+  
+
+  <!-- </script> -->
+<!-- <button  onclick="f1()">read summary</button> -->
+</body>
+</html>
+<script>
+  var t;
+  // If your BMI is 18.5 to 24.9, it falls within the normal or Healthy Weight range. If your BMI is 25.0 to 29.9, it falls within the overweight range. If your BMI is 30.0 or higher, it falls within the obese range.
+
+  var BMI = '{{ BMI }}';
+  if (BMI > 18.5 && BMI < 24.9){
+
+t = "BMI status : normal";
+document.getElementById("m1").innerHTML = t;
+  }
+
+  else if(BMI > 25.0 && BMI < 29.9){
+    t = "BMI status : overweight";
+document.getElementById("m1").innerHTML = t;
+
+  }
+  else if(BMI >= 30){
+    t = "BMI status : obese";
+document.getElementById("m1").innerHTML = t;
+
+  }
+  else{
+    t = "underweight";
+document.getElementById("m1").innerHTML = t;
+
+  }
+
+
+  var BP = '{{ BloodPressure }}';
+  if (BP < 60){
+
+t = "Blood pressure : low";
+document.getElementById("m2").innerHTML = t;
+  }
+  else if(BP > 90){
+    t = "Blood pressure : high";
+document.getElementById("m2").innerHTML = t;
+
+  }
+  else{
+    t = "Blood pressure : normal";
+document.getElementById("m2").innerHTML = t;
+  }
+//   less than 140 mg/dL is normal
+// •	140 to 199 mg/dL indicates prediabetes
+// •	200 mg/dL or above indicates diabetes
+
+var G = '{{ Glucose }}';
+  if (G < 140){
+
+t = "Glucose level : normal";
+document.getElementById("m3").innerHTML = t;
+  }
+  else if(G >= 140 && G <= 199){
+    t = "Glucose level : at risk";
+document.getElementById("m3").innerHTML = t;
+
+  }
+  else if(G >= 200){
+    t = "Glucose level : diabetic symptoms";
+document.getElementById("m3").innerHTML = t;
+  }
+
+</script>
+

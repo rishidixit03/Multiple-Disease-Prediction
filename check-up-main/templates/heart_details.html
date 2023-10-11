@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Heart-disease</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        
+      </head>
+    <style>
+        * {
+  box-sizing: border-box;
+}
+
+     body{
+      
+  background-color: #f1f1f1;
+  
+  font-family: Arial;
+}
+
+/* Center website */
+.main {
+      margin: 80px;
+      margin-top: 50px;
+    }
+ 
+  
+    .navbar-brand {
+      font-size: 40px;
+      padding-left: 100px;
+    }
+  
+  
+
+
+p{
+    
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
+    
+}
+h3{
+    
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
+    
+}
+.content {
+  background-color: white;
+  padding: 10px;
+  align-items: center;
+  margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 80px;
+}
+.b{
+  padding-bottom: 3%;
+    display: flex;
+align-items: center;
+justify-content: center;
+
+}
+    </style>
+    
+<!-- Adding styles like colour, height, width, border to our html page -->
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <div class="container-fluid">
+
+      <a class="navbar-brand">CHECK-UP</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse inline" id="navbarSupportedContent"style="margin-right: 100px;" >
+       
+        
+         
+          
+          
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="{{url_for('home_page') }}">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('cancer_details') }}">Breast Cancer</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link active" href = "#">Heart Disease</a>
+              </li>
+              
+              <li class="nav-item">
+                  <a class="nav-link" href= "{{url_for('diabetes_details') }}">Diabetes</a>
+              </li>
+        
+          </ul>
+            </ul>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+<h2 style="margin:50px; margin-left: 110px;">
+    HEART-DISEASE </h2>
+    
+    <div class="content">
+      <h3>About</h3>
+  <p>
+    The term heart disease is often used interchangeably with the term cardiovascular disease.  <br>
+    Cardiovascular disease generally refers to conditions that involve narrowed or blocked blood vessels that can lead to a heart attack, chest pain (angina) or stroke. <br>
+    Heart disease describes a range of conditions that affect your heart.
+    <br> Heart diseases include: Blood vessel disease, such as coronary artery disease; Heart rhythm problems (arrhythmias); Heart valve disease; Disease of the heart muscle.
+   
+ <br><br>
+ 
+
+
+   
+    <h3>Symptoms</h3><br>
+    
+      <ul>
+        <li>Chest pain, chest tightness, chest pressure and chest discomfort (angina).</li>
+        <li>Shortness of breath.</li>
+        <li>Weakness or coldness in your legs or arms if the blood vessels in those parts of your body are narrowed.</li>
+        <li>Pain in the neck, jaw, throat, upper abdomen or back</li>
+      
+      </ul>
+      <br>
+    <h3>Prerequisite</h3>
+
+    <p>A person must have his/her report handy to fill the values needed in predicting the disease.<br><br><b> Following Reports/tests are needed </b>:<br>  
+      <b>Lipid profile test</b> - will provide the value of cholesterol<br>
+      <b>Electrocardiogram (ECG or EKG)</b> - will provide the value of heart-rate, angina,chest-pain type, Electrocardiographic, ST depression, Slope of ST, major-vessels.<br>
+      <b>Fasting blood glucose test</b> - will provide the value of Fasting Blood Sugar.<br>
+  <b>Blood-pressure test</b> - will provide the value of Blood pressure instanly<br>
+<b> Chest X-Ray</b> - will help in deciding the type of Defect.
+    
+    
+    </p>
+    <br>
+  
+    <h3>Factors affecting heart-disease</h3>
+    <p><b>* Age</b>: displays the age of the individual. <br><br>
+    <b>* Sex</b>: Gender of the individual using the following format :<br> 
+1 = male<br>
+0 = female<br><br>
+<b>* Chest-pain type</b>: Angina is chest pain or discomfort caused when your heart muscle doesn’t get enough oxygen-rich blood. <br>It may feel like pressure or squeezing in your chest. <br>The discomfort also can occur in your shoulders, arms, neck, jaw, or back. <br>Angina pain may even feel like indigestion.<br>
+ Type of chest-pain experienced by the individual is in following format : <br>
+0 = typical angina<br>
+1 = atypical angina<br>
+2 = non - anginal pain<br>
+3 = asymptotic <br><br>
+<b>* Resting Blood Pressure(in mmHg)</b>: Over time, high blood pressure can damage arteries that feed your heart. <br>High blood pressure that occurs with other conditions, such as obesity, high cholesterol or diabetes, increases your risk even more.
+
+<br>
+General Blood pressure(diastolic) range :
+<br>
+Below 60 = Low<br>
+60-90 = Normal<br>
+Above 90 = High<br><br>
+
+
+<b>* Serum Cholestrol(in mg/dl)</b> : A high level of low-density lipoprotein (LDL) cholesterol (the “bad” cholesterol) is most likely to narrow arteries. <br>
+A high level of triglycerides, a type of blood fat related to your diet, also ups your risk of a heart attack.<br>
+ However, a high level of high-density lipoprotein (HDL) cholesterol (the “good” cholesterol) lowers your risk of a heart attack.<br>
+ General Cholesterol range : <br>
+ For Age less than 18: normal(less than 170); boderline(170-199); high(above 200)<br>
+ For Age more than 18: normal(125-200); boderline(200-239); high(above 239)<br><br>
+<br>
+<b>* Fasting Blood Sugar</b>: compares the fasting blood sugar value of an individual with 120mg/dl.<br>
+Representation: <br>
+1 = If fasting blood sugar greater 120mg/dl  <br>
+0 = If fasting blood sugar less than 120mg/dl<br><br>
+<b>* Resting ECG </b>: displays resting electrocardiographic results<br>
+Representation: <br><br>
+0 = normal <br>
+1 = having ST-T wave abnormality<br>
+2 = left ventricular hyperthrophy<br><br>
+
+<b>* Max heart rate achieved(beats per minute)</b> : Maximum heart rate achieved at the time of critical condition or on admission to hospital.<br>
+Following are the ranges of heart-beat: <br>
+60-100  = normal<br>
+40 and below = Too slow heart beat<br>
+40-60 = slow<br>
+100 and above = too fast<br><br>
+<b>* Exercise induced angina</b> : The pain or discomfort associated with angina usually feels tight, gripping or squeezing, and can vary from mild to severe. <br>
+Angina is usually felt in the center of your chest but may spread to either or both of your shoulders, or your back, neck, jaw or arm. <br>
+Representation : <br>
+1 = yes<br>
+0 = no<br><br>
+<b>* ST depression induced by exercise relative to rest </b> : displays the value which is an integer or float.<br><br>
+<b>* Peak exercise ST segment </b> : A treadmill ECG stress test is considered abnormal when there is a horizontal or down-sloping ST-segment depression ≥ 1 mm at 60–80 ms after the J point.<br>
+Representation : <br>
+1 = upsloping<br>
+2 = flat<br>
+3 = downsloping<br><br>
+<b>* Number of major vessels (0–3) colored by flourosopy</b> : displays the value as integer or float.<br><br>
+<b>* Defect</b> : displays the type of defect<br>
+Representation of the defects are: <br>
+3 = normal<br>
+6 = fixed defect<br>
+7 = reversible defect<br><br>
+
+    <div class = "b"> 
+      <button type="button" class="btn btn-info btn-lg"><a  style="text-decoration: none;color:black;" href = "{{url_for('predict_heart') }}">Take test</a><span>&rarr;</span></button>
+      <!-- <button class="card-btn"><a href = "{{url_for('predict_heart') }}">Take test</a><span>&rarr;</span></button> -->
+    </div>
+    
+  </div> 
+</body>
+</html>

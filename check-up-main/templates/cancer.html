@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cancer</title>
+        <link rel="stylesheet" href="static/style.css"/>  
+   
+
+      </head>
+    
+    
+<body>
+<div class="container">
+  <div class="title">Breast-Cancer Prediction</div>
+  <div class="content">
+    <form action="{{ url_for('predict_cancer')}}" method="post">
+      <div class="user-details">
+
+
+      
+
+
+
+
+        <div class="input-box">
+          <span class="details">Texture mean</span>
+          <input type="text" id="texture mean" name="texture_mean" placeholder="texture mean(9.71-39.3)
+          " required="required">
+        </div>
+        <div class="input-box">
+          <span class="details">Perimeter mean</span>
+          <input type="text" id="perimeter_mean" name="perimeter_mean" placeholder="perimeter mean(43.8-189)" required="required">
+        </div>
+        <div class="input-box">
+          <span class="details">Smoothness mean</span>
+          <input type="text" id="smoothness mean" name="smoothness_mean" placeholder="smoothness mean(0.05-0.16)" required="required">
+        </div>
+        <div class="input-box">
+          <span class="details">Compactness mean</span>
+          <input type="text" id="compactness_mean" name="compactness_mean" placeholder="compactness mean(0.02-0.35)" required="required">
+        </div>
+        <div class="input-box">
+          <span class="details">Symmetry mean</span>
+          <input type="text" id="symmetry_mean" name="symmetry_mean" placeholder="symmetry mean(0.11-0.3)" required="required">
+        </div>
+      
+  </div>
+      
+      <div class="button">
+        <input type="submit" value="Predict">
+      </div>
+    </form>
+  </div>
+</div>
+<!-- <h3>{{ prediction_text }}</h3> -->
+
+
+</body>
+</html>

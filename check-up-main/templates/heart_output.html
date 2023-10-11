@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>prediction</title>
+        
+
+
+
+
+        
+        
+        
+      </head>
+
+    <style>
+        * {
+  box-sizing: border-box;
+}
+
+body {
+ background: linear-gradient(135deg, #71b7e6, #9b59b6); 
+  padding: 20px;
+  font-family: Arial;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+/* content {
+      
+      padding: 100px;
+      align-items: center;
+    } */
+
+  .container{
+
+    background-color: white; 
+    text-align: center;
+    
+    align-items: center;
+   
+    margin: auto;
+    padding-bottom: 20px;
+    padding-top: 30px;
+    padding-left : 30px;
+    padding-right : 30px;
+    /* transform : translateX(-10%) translateY(-30%); */
+  }
+
+  .pre{
+    text-align: left;
+
+  }
+   
+
+  
+
+
+    </style>
+
+
+<!-- Adding styles like colour, height, width, border to our html page -->
+<body>
+  
+  <div class = "container">
+    
+  <h3>{{ prediction_text }}
+
+    <!-- {{Age}}{{BMI}} -->
+    <h3>{{advice}}</h3>
+
+    <div class ="pre">
+    <h3>{{Pre}}</h3>
+
+    
+    <h5>{{p1}}</h5>
+    <h5>{{p2}}</h5>
+    <h5>{{p3}}</h5>
+    <h5>{{p4}}</h5>
+    <h5>{{p5}}</h5>
+    </div>
+
+  </h3>
+  <p id = "m1"></p>
+  <p id = "m2"></p>
+  <p id = "m3"></p>
+  
+  <br>
+  <a href = "{{url_for('heart_details') }}">Check description box for more details</a><br><br>
+  <a href = "{{url_for('predict_heart') }}"><button class="btn" type="submit">Take another test</button></a>&nbsp &nbsp
+  <a href = "{{url_for('home_page') }}"><button class="btn" type="submit">Home</button></a>
+
+  
+  
+  </div>
+  
+
+  
+  
+
+  <!-- </script> -->
+<!-- <button  onclick="f1()">read summary</button> -->
+</body>
+</html>
+<script>
+  var t;
+  // If your BMI is 18.5 to 24.9, it falls within the normal or Healthy Weight range. If your BMI is 25.0 to 29.9, it falls within the overweight range. If your BMI is 30.0 or higher, it falls within the obese range.
+
+  var chol = '{{ Chol }}';
+  var age = '{{ age }}';
+  var sex = '{{ sex }}';
+  
+
+
+  
+      if(age <= 19){
+          if(chol < 170){
+            t = "Cholesterol level : normal";
+document.getElementById("m1").innerHTML = t;
+          }
+          else if(chol >= 170 && chol < 199){
+              
+              t = "Cholesterol : boderline(at risk)";
+document.getElementById("m1").innerHTML = t;
+            }
+          else if(chol >= 200){
+            t = "Cholesterol level : high";
+document.getElementById("m1").innerHTML = t;
+            
+            }
+      }
+      if(age >= 20){
+        if(chol > 125 && chol < 200){
+            t = "Cholesterol level : normal";
+document.getElementById("m1").innerHTML = t;
+             
+          }
+          else if(chol >= 200 && chol < 239){
+            t = "Cholesterol : boderline(at risk)";
+document.getElementById("m1").innerHTML = t;
+            }
+          else if(chol >= 239){
+            t = "Cholesterol level : high";
+document.getElementById("m1").innerHTML = t;
+            }
+
+
+      }
+ 
+      
+
+
+  
+
+
+
+  var BP = '{{ BP }}';
+  if (BP < 60){
+
+t = "Blood pressure : low";
+document.getElementById("m2").innerHTML = t;
+  }
+  else if(BP > 90){
+    t = "Blood pressure : high";
+document.getElementById("m2").innerHTML = t;
+
+  }
+  else{
+    t = "Blood pressure : normal";
+document.getElementById("m2").innerHTML = t;
+  }
+
+
+  var HB = '{{ HB }}';
+if(HB < 40){
+    t = "Heart-beat : too slow";
+document.getElementById("m3").innerHTML = t;
+}
+else if(HB > 40 && HB < 60){
+    t = "Heart-beat : slow";
+document.getElementById("m3").innerHTML = t;
+}
+
+else if(HB >= 60 && HB <= 100){
+    t = "Heart-beat : normal";
+document.getElementById("m3").innerHTML = t;
+}
+
+else if( HB > 100){
+    t = "Heart-beat : too fast";
+document.getElementById("m3").innerHTML = t;
+}
+
+
+</script>

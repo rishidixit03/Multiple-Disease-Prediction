@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>prediction</title>
+        
+        
+        
+      </head>
+
+    <style>
+        * {
+  box-sizing: border-box;
+}
+
+body {
+ background: linear-gradient(135deg, #71b7e6, #9b59b6); 
+  padding: 20px;
+  font-family: Arial;
+  display: flex;
+  text-align: center;
+    justify-content: center;
+}
+
+/* Center website */
+.main {
+  max-width: 2000px;
+  margin: auto;
+}
+/* content {
+      
+      padding: 100px;
+      align-items: center;
+    } */
+
+  .container{
+
+    background-color: white; 
+    text-align: center;
+    justify-content: center;
+    width: 40%;
+    top : 30%;
+    left : auto;
+    margin-top: 10%;
+    padding-bottom: 10px;
+    padding-top: 30px;
+    padding-left : 30px;
+    padding-right : 30px;
+    /* transform : translateX(-10%) translateY(-30%); */
+  }
+/* h3{
+    /* padding-top: 20px;
+    padding-bottom: 20px; */
+    /* background-color: white; 
+    text-align: center;
+    position : absolute;
+    top : 50%;
+    left : 50%;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-left : 30px;
+    padding-right : 30px;
+    transform : translateX(-50%) translateY(-50%);
+    
+} */ */
+
+    </style>
+    
+<!-- Adding styles like colour, height, width, border to our html page -->
+<body>
+  <div class = "container">
+    
+  <h3>{{ prediction_text }}
+    <!-- {{Age}}{{BMI}} -->
+
+  </h3>
+
+  <a href = "{{url_for('home_page') }}"><button class="btn" type="submit">Back to Home</button></a><br><br>
+  
+  </div>
+  
+  
+
+  <!-- </script> -->
+<!-- <button  onclick="f1()">read summary</button> -->
+</body>
+</html>
